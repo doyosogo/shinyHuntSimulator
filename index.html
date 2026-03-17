@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shiny Hunt Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>✨ Shiny Hunt Simulator</h1>
+
+<input id="pokemonName" placeholder="Enter Pokémon name">
+
+<select id="game">
+<option value="gen1">Gen 1 (FR/LG)</option>
+<option value="gen2">Gen 2 (HG/SS)</option>
+<option value="gen3">Gen 3 (RSE)</option>
+<option value="gen4">Gen 4 (DPP)</option>
+<option value="gen5">Gen 5 (BW)</option>
+</select>
+
+<label>
+<input type="checkbox" id="shinyCharm"> Shiny Charm (Gen 5)
+</label>
+
+<div class="buttons">
+<button onclick="startHunt()">Start Hunt</button>
+<button onclick="stopHunt()">Stop</button>
+<button onclick="manualEncounter()">Encounter</button>
+</div>
+
+<h2 id="counter">Encounters: 0</h2>
+
+<img id="sprite">
+
+<h2 id="result"></h2>
+
+</div>
+
+<!-- ACTIVE HUNTS -->
+<div class="container">
+
+<h2>📋 Active Hunts</h2>
+
+<div id="huntList"></div>
+
+</div>
+
+<!-- SHINY COLLECTION -->
+<div class="container">
+
+<h2>✨ Shiny Collection</h2>
+
+<div id="collection"></div>
+
+</div>
+
+<div id="flash"></div>
+
+<audio id="shinySound" src="shiny.mp3"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+<!-- SAVE MANAGER -->
+<div class="container">
+
+<h2>💾 Save Manager</h2>
+
+<button onclick="exportSave()">Export Save</button>
+
+<input type="file" id="importFile" accept=".json">
+
+<button onclick="importSave()">Import Save</button>
+
+</div>
